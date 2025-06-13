@@ -10,9 +10,3 @@ export type Product = {
         count: number
     }
 }
-
-export type ProductDetailsPageProps = {
-  params: {
-    id: string
-  }
-}

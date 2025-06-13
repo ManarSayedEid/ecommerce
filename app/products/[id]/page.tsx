@@ -1,9 +1,9 @@
 import Head from "next/head"
 import { generateProductJsonLd } from "@/app/utilities/get-json-ld"
-import { Product, ProductDetailsPageProps } from "@/app/utilities/types"
+import { Product } from "@/app/utilities/types"
 
-export const generateMetadata = async ({ params }: ProductDetailsPageProps) => {
-    const { id } = params
+export const generateMetadata = async ({ params }: {params: Promise<{ id: string }>}) => {
+    const { id } = await params
     try {
         const res = await fetch(`https://fakestoreapi.com/products/${id}`, {
             cache: 'no-store'
@@ -22,8 +22,8 @@ export const generateMetadata = async ({ params }: ProductDetailsPageProps) => {
     }
 }
 
-export default async function productDetails({ params }: ProductDetailsPageProps) {
-    const { id } = params
+export default async function productDetails({ params }: {params: Promise<{ id: string }>}) {
+    const { id } = await params
     let product: Product | null = null
 
     try {
