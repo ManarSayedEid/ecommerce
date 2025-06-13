@@ -14,7 +14,7 @@ export default function HeroSection() {
 
         <h1
           className="text-4xl font-bold md:text-5xl">
-          The UK's largest Online Islamic marketplace
+          The UK&rsquo;s largest Online Islamic marketplace
         </h1>
 
         <p
