@@ -1,7 +1,7 @@
 "use client"
 import { useEffect, useState } from "react"
 
-export default function CategoryFilter({ setCategory, selectedCategory }: { setCategory: (category: string) => void, selectedCategory: string | undefined }) {
+export default function CategoryFilter({ setCategory, selectedCategory }: { setCategory: (category: string) => void, selectedCategory?: string }) {
     const [categories, setCategories] = useState<string[]>([])
 
     useEffect(() => {
